@@ -11,8 +11,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import lat.pam.dessertrecycleview.R
 
-class DessertAdapter(private val dessertList: List<Dessert>) :
-    RecyclerView.Adapter<DessertAdapter.DessertViewHolder>() {
+class DessertAdapter(
+    private val dessertList: List<Dessert>
+) : RecyclerView.Adapter<DessertAdapter.DessertViewHolder>() {
 
     class DessertViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
@@ -46,7 +47,6 @@ class DessertAdapter(private val dessertList: List<Dessert>) :
         holder.tvDescription.text = dessert.description
         holder.imgDessert.setImageResource(dessert.imageRes)
 
-        // Dynamically change circle background tint color
         val circleBg = GradientDrawable().apply {
             shape = GradientDrawable.OVAL
             setColor(Color.parseColor(dessert.colorHex))
